@@ -68,6 +68,7 @@
         function spawnImage() {
             const img = document.createElement("img");
             img.src = imageList[Math.floor(Math.random() * imageList.length)];
+            img.crossOrigin = "anonymous"; // Fix CORS blocking
             const size = Math.floor(60 + Math.random() * 200);
             img.style.width = size + "px";
             img.style.position = "absolute";
@@ -102,7 +103,7 @@
             requestAnimationFrame(() => { img.style.opacity = "0.5"; });
         }
         // spawn every 500ms forever
-        setInterval(spawnImage, 4000);
+        setInterval(spawnImage, 500);
     }
     // Ensure document.body exists before running (fixes errors on about:blank)
     if (document.body) {
@@ -111,5 +112,7 @@
         document.addEventListener('DOMContentLoaded', setup, { once: true });
         // Fallback: if DOMContentLoaded already fired but body still null, try again shortly
         setTimeout(() => { if (!document.body) return; setup(); }, 100);
+    }
+})();
     }
 })();
