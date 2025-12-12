@@ -62,16 +62,25 @@
         const MAX_IMAGES = 10;
         
         function spawnImage() {
+            console.log("Attempting to spawn image. Active images:", activeImages.length, "/", MAX_IMAGES);
+            
             // Don't spawn if we're at max capacity
             if (activeImages.length >= MAX_IMAGES) {
+                console.log("Max capacity reached, skipping spawn");
                 return;
             }
             const img = document.createElement("img");
             const imgUrl = imageList[Math.floor(Math.random() * imageList.length)];
             img.src = imgUrl;
             
+            // Log when image loads successfully
+            img.onload = function() {
+                console.log("✓ Image loaded successfully:", imgUrl);
+            };
+            
             // Hide image if it fails to load
             img.onerror = function() {
+                console.error("✗ Failed to load image:", imgUrl);
                 img.remove();
                 // Remove from active images array if it failed to load
                 const index = activeImages.indexOf(img);
