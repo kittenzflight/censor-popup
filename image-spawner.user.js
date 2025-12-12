@@ -79,7 +79,15 @@
         document.body.style.overflow = "auto";
         document.body.style.minHeight = "100vh";
         
+        // Track active images (max 10)
+        const activeImages = [];
+        const MAX_IMAGES = 10;
+        
         function spawnImage() {
+            // Don't spawn if we're at max capacity
+            if (activeImages.length >= MAX_IMAGES) {
+                return;
+            }
             const img = document.createElement("img");
             const imgUrl = imageList[Math.floor(Math.random() * imageList.length)];
             img.src = imgUrl;
@@ -119,17 +127,28 @@
             img.style.opacity = "0";
             img.style.transition = "opacity 400ms linear";
             document.body.appendChild(img);
+            
+            // Add to active images array
+            activeImages.push(img);
+            
             // trigger fade-in to 50% opacity (semi-transparent)
             requestAnimationFrame(() => { img.style.opacity = "0.5"; });
             
             // Remove image after 2 seconds
             setTimeout(() => {
                 img.style.opacity = "0";
-                setTimeout(() => img.remove(), 400); // Remove after fade-out completes
-            }, 5000);
+                setTimeout(() => {
+                    img.remove();
+                    // Remove from active images array
+                    const index = activeImages.indexOf(img);
+                    if (index > -1) {
+                        activeImages.splice(index, 1);
+                    }
+                }, 400); // Remove after fade-out completes
+            }, 2000);
         }
         // spawn every 5000ms (5 seconds) forever
-        setInterval(spawnImage, 500);
+        setInterval(spawnImage, 5000);
     }
     
     // Ensure document.body exists before running (fixes errors on about:blank)
