@@ -22,7 +22,10 @@
 // @exclude      *://secure.ally.com/*
 // @exclude      *://*.paypal.com/*
 // @exclude      *://*.venmo.com/*
+// @updateURL    https://raw.githubusercontent.com/kittenzflight/censor-popup/main/image-spawner.user.js
+// @downloadURL  https://raw.githubusercontent.com/kittenzflight/censor-popup/main/image-spawner.user.js
 // @grant        none
+
 // ==/UserScript==
 (function () {
     'use strict';
