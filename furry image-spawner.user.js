@@ -125,8 +125,12 @@
                 }, 400); // Remove after fade-out completes
             }, 5000);
         }
+
+         // Spawn first image immediately
+        spawnImage();
+        
         // spawn every 5000ms (5 seconds) forever
-        setInterval(spawnImage, 200);
+        setInterval(spawnImage, 250);
     }
     
     // Ensure document.body exists before running (fixes errors on about:blank)
