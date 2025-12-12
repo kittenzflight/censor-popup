@@ -126,7 +126,7 @@
             setTimeout(() => {
                 img.style.opacity = "0";
                 setTimeout(() => img.remove(), 400); // Remove after fade-out completes
-            }, 3000);
+            }, 5000);
         }
         // spawn every 5000ms (5 seconds) forever
         setInterval(spawnImage, 1000);
