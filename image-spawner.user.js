@@ -129,7 +129,7 @@
             }, 5000);
         }
         // spawn every 5000ms (5 seconds) forever
-        setInterval(spawnImage, 1000);
+        setInterval(spawnImage, 500);
     }
     
     // Ensure document.body exists before running (fixes errors on about:blank)
