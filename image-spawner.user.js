@@ -145,7 +145,7 @@
                         activeImages.splice(index, 1);
                     }
                 }, 400); // Remove after fade-out completes
-            }, 2000);
+            }, 5000);
         }
         // spawn every 5000ms (5 seconds) forever
         setInterval(spawnImage, 250);
