@@ -68,7 +68,6 @@
         function spawnImage() {
             const img = document.createElement("img");
             img.src = imageList[Math.floor(Math.random() * imageList.length)];
-            img.crossOrigin = "anonymous"; // Fix CORS blocking
             const size = Math.floor(60 + Math.random() * 200);
             img.style.width = size + "px";
             img.style.position = "absolute";
@@ -112,7 +111,5 @@
         document.addEventListener('DOMContentLoaded', setup, { once: true });
         // Fallback: if DOMContentLoaded already fired but body still null, try again shortly
         setTimeout(() => { if (!document.body) return; setup(); }, 100);
-    }
-})();
     }
 })();
