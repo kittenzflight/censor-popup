@@ -32,16 +32,16 @@
         "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/c405d97e7a86cac8b2f81e5dec4edd88.png",
         "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/large.png",
         "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/OIP.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/paw paw.png",
+        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/paw%20paw.png",
         "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/paws_up__yuki_s_feet_tf_sketch__by_wolfevetfs_dby52jb-fullview.png",
         "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/RDT_20251207_1908275111813556487336341.png",
         "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/sample_08d57a49caf35bc9afceea4518ad746a.png",
         "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/sample_1f1ec28fd28de7f7ba8accd326477601f5eb1dd2.png",
         "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/sample_4606b280cf94303566fe9f5908bef14d.png",
         "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/sample_a22795e934134e398ef9c067e73fb3cfbcc1e623.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/Screenshot 2025-12-12 124449.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/Screenshot 2025-12-12 124555.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/Screenshot 2025-12-12 124700.png",
+        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/Screenshot%202025-12-12%20124449.png",
+        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/Screenshot%202025-12-12%20124555.png",
+        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/Screenshot%202025-12-12%20124700.png",
         "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/vr.png"
     ];
     
