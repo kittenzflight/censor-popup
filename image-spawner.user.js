@@ -110,7 +110,3 @@
         setTimeout(() => { if (!document.body) return; setup(); }, 100);
     }
 })();
-        // Fallback: if DOMContentLoaded already fired but body still null, try again shortly
-        setTimeout(() => { if (!document.body) return; setup(); }, 100);
-    }
-})();
