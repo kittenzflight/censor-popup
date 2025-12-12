@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         edge Image Spawner Infinite
 // @namespace    Violentmonkey Scripts
-// @version      1.5
-// @description  Spawns your images infinitely every 5 seconds
+// @version      1.7
+// @description  Spawns your images infinitely every .25 seconds
 // @match        *://*/*
 // @exclude      *://www.youtube.com/*
 // @exclude      *://youtube.com/*
