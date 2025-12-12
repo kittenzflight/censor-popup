@@ -1,6 +1,13 @@
+// ==UserScript==
+// @name         edge Image Spawner Infinite
+// @namespace    Violentmonkey Scripts
+// @version      1.4
+// @description  Spawns your images infinitely every 0.5 seconds on youtube
+// @match        https://www.youtube.com/
+// @grant        none
 // @updateURL    https://raw.githubusercontent.com/kittenzflight/censor-popup/main/image-spawner.user.js
 // @downloadURL  https://raw.githubusercontent.com/kittenzflight/censor-popup/main/image-spawner.user.js
-
+// ==/UserScript==
 (function () {
     'use strict';
     const imageList = [
