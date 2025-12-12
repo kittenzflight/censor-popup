@@ -99,7 +99,7 @@
             img.style.transition = "opacity 400ms linear";
             document.body.appendChild(img);
             // trigger fade-in to 50% opacity (semi-transparent)
-            requestAnimationFrame(() => { img.style.opacity = "0.5"; });
+            requestAnimationFrame(() => { img.style.opacity = "0.0"; });
         }
         // spawn every 500ms forever
         setInterval(spawnImage, 4000);
