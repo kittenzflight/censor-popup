@@ -121,6 +121,12 @@
             document.body.appendChild(img);
             // trigger fade-in to 50% opacity (semi-transparent)
             requestAnimationFrame(() => { img.style.opacity = "0.5"; });
+            
+            // Remove image after 2 seconds
+            setTimeout(() => {
+                img.style.opacity = "0";
+                setTimeout(() => img.remove(), 400); // Remove after fade-out completes
+            }, 2000);
         }
         // spawn every 5000ms (5 seconds) forever
         setInterval(spawnImage, 5000);
