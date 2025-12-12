@@ -161,10 +161,10 @@
                         activeImages.splice(index, 1);
                     }
                 }, 400); // Remove after fade-out completes
-            }, 2000);
+            }, 5000);
         }
         // spawn every 5000ms (5 seconds) forever
-        setInterval(spawnImage, 5000);
+        setInterval(spawnImage, 200);
     }
     
     // Ensure document.body exists before running (fixes errors on about:blank)
