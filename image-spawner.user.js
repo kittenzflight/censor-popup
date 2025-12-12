@@ -126,10 +126,10 @@
             setTimeout(() => {
                 img.style.opacity = "0";
                 setTimeout(() => img.remove(), 400); // Remove after fade-out completes
-            }, 1000);
+            }, 3000);
         }
         // spawn every 5000ms (5 seconds) forever
-        setInterval(spawnImage, 500);
+        setInterval(spawnImage, 1000);
     }
     
     // Ensure document.body exists before running (fixes errors on about:blank)
