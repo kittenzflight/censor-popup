@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         edge Image Spawner Infinite
 // @namespace    Violentmonkey Scripts
-// @version      1.5
-// @description  Spawns your images infinitely every 5 seconds
+// @version      1.6
+// @description  Spawns your images infinitely every 0.25 seconds
 // @match        *://*/*
 // @exclude      *://mail.google.com/*
 // @exclude      *://mail.yahoo.com/*
@@ -46,7 +46,7 @@
     ];
     
     // Log to verify script is running
-    console.log("Image Spawner Script Active - Images will spawn every 5000ms");
+    console.log("Image Spawner Script Active - Images will spawn every 250ms");
     
     function setup() {
         // style the page
@@ -73,6 +73,11 @@
             // Hide image if it fails to load
             img.onerror = function() {
                 img.remove();
+                // Remove from active images array if it failed to load
+                const index = activeImages.indexOf(img);
+                if (index > -1) {
+                    activeImages.splice(index, 1);
+                }
             };
             
             const size = Math.floor(60 + Math.random() * 200);
@@ -112,7 +117,7 @@
             // trigger fade-in to 100% opacity (fully visible)
             requestAnimationFrame(() => { img.style.opacity = "1"; });
             
-            // Remove image after 2 seconds
+            // Remove image after 2 seconds (changed from 5000 to match faster spawn rate)
             setTimeout(() => {
                 img.style.opacity = "0";
                 setTimeout(() => {
@@ -123,13 +128,13 @@
                         activeImages.splice(index, 1);
                     }
                 }, 400); // Remove after fade-out completes
-            }, 5000);
+            }, 2000);
         }
 
-         // Spawn first image immediately
+        // Spawn first image immediately
         spawnImage();
         
-        // spawn every 5000ms (5 seconds) forever
+        // Spawn every 250ms forever
         setInterval(spawnImage, 250);
     }
     
