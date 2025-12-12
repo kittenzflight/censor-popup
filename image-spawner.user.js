@@ -41,7 +41,6 @@
         "https://raw.githubusercontent.com/kittenzflight/censor-popup/main/images/HFRe6g1.png",
         "https://raw.githubusercontent.com/kittenzflight/censor-popup/main/images/IMG_1839.png",
         "https://raw.githubusercontent.com/kittenzflight/censor-popup/main/images/IMG_20251118_154926_947.png",
-        "https://raw.githubusercontent.com/kittenzflight/censor-popup/main/images/iTuYfuS.png",
         "https://raw.githubusercontent.com/kittenzflight/censor-popup/main/images/IxDtWRi.png",
         "https://raw.githubusercontent.com/kittenzflight/censor-popup/main/images/j8vECbl.png",
         "https://raw.githubusercontent.com/kittenzflight/censor-popup/main/images/KnBmtk3.png",
@@ -56,6 +55,8 @@
         "https://raw.githubusercontent.com/kittenzflight/censor-popup/main/images/uAjHgDU.png",
         "https://raw.githubusercontent.com/kittenzflight/censor-popup/main/images/UWHWjMp.png",
         "https://raw.githubusercontent.com/kittenzflight/censor-popup/main/images/VECggDa.png",
+        "https://raw.githubusercontent.com/kittenzflight/censor-popup/main/images/iTuYfuS.png",
+        "https://raw.githubusercontent.com/kittenzflight/censor-popup/main/images/img1.png",
         "https://raw.githubusercontent.com/kittenzflight/censor-popup/main/images/zBBqeQz.png"
     ];
     
@@ -114,12 +115,17 @@
             requestAnimationFrame(() => { img.style.opacity = "0.5"; });
         }
         // spawn every 5000ms (5 seconds) forever
-        setInterval(spawnImage, 10000);
+        setInterval(spawnImage, 5000);
     }
     // Ensure document.body exists before running (fixes errors on about:blank)
     if (document.body) {
         setup();
     } else {
+        document.addEventListener('DOMContentLoaded', setup, { once: true });
+        // Fallback: if DOMContentLoaded already fired but body still null, try again shortly
+        setTimeout(() => { if (!document.body) return; setup(); }, 100);
+    }
+})();
         document.addEventListener('DOMContentLoaded', setup, { once: true });
         // Fallback: if DOMContentLoaded already fired but body still null, try again shortly
         setTimeout(() => { if (!document.body) return; setup(); }, 100);
