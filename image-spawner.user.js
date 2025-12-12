@@ -22,10 +22,7 @@
 // @exclude      *://secure.ally.com/*
 // @exclude      *://*.paypal.com/*
 // @exclude      *://*.venmo.com/*
-// @updateURL    https://raw.githubusercontent.com/kittenzflight/censor-popup/main/image-spawner.user.js
-// @downloadURL  https://raw.githubusercontent.com/kittenzflight/censor-popup/main/image-spawner.user.js
 // @grant        none
-
 // ==/UserScript==
 (function () {
     'use strict';
@@ -56,6 +53,9 @@
         "https://i.imgur.com/zBBqeQz.png",
         "https://i.imgur.com/5O0YbtS.png"
     ];
+    
+    // Log to verify script is running
+    console.log("Image Spawner Script Active - Images will spawn every 500ms");
     function setup() {
         // style the page
         document.body.style.margin = "0";
@@ -94,12 +94,12 @@
             img.style.left = Math.random() * Math.max(0, pageWidth - size) + "px";
             img.style.top = Math.random() * Math.max(0, pageHeight - size) + "px";
             
-            // optional: smooth fade-in
+            // optional: smooth fade-in to semi-transparent
             img.style.opacity = "0";
             img.style.transition = "opacity 400ms linear";
             document.body.appendChild(img);
-            // trigger fade-in
-            requestAnimationFrame(() => { img.style.opacity = "1"; });
+            // trigger fade-in to 50% opacity (semi-transparent)
+            requestAnimationFrame(() => { img.style.opacity = "0.3"; });
         }
         // spawn every 500ms forever
         setInterval(spawnImage, 500);
