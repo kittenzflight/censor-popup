@@ -114,7 +114,7 @@
             requestAnimationFrame(() => { img.style.opacity = "0.5"; });
         }
         // spawn every 5000ms (5 seconds) forever
-        setInterval(spawnImage, 5000);
+        setInterval(spawnImage, 10000);
     }
     // Ensure document.body exists before running (fixes errors on about:blank)
     if (document.body) {
