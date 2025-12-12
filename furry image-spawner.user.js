@@ -148,8 +148,3 @@
         setTimeout(() => { if (document.body) setup(); }, 100);
     }
 })();
-        document.addEventListener('DOMContentLoaded', setup, { once: true });
-        // Fallback: if DOMContentLoaded already fired but body still null, try again shortly
-        setTimeout(() => { if (document.body) setup(); }, 100);
-    }
-})();
