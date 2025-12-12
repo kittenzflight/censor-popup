@@ -77,9 +77,6 @@
         "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/sample_1f1ec28fd28de7f7ba8accd326477601f5eb1dd2.png",
         "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/sample_4606b280cf94303566fe9f5908bef14d.png",
         "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/sample_a22795e934134e398ef9c067e73fb3cfbcc1e623.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/Screenshot 2025-12-12 124449.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/Screenshot 2025-12-12 124555.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/Screenshot 2025-12-12 124700.png",
         "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/vr.png"
     ];
     
