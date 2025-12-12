@@ -27,31 +27,36 @@
 (function () {
     'use strict';
     const imageList = [
-        "https://i.imgur.com/iTuYfuS.png",
-        "https://i.imgur.com/HFRe6g1.png",
-        "https://i.imgur.com/DM6eJRE.png",
-        "https://i.imgur.com/2Pp2snw.png",
-        "https://i.imgur.com/uAjHgDU.png",
-        "https://i.imgur.com/uAjHgDU.png",
-        "https://i.imgur.com/KnBmtk3.png",
-        "https://i.imgur.com/Av8u8Kt.png",
-        "https://i.imgur.com/GV6RC4u.png",
-        "https://i.imgur.com/j8vECbl.png",
-        "https://i.imgur.com/j8vECbl.png",
-        "https://i.imgur.com/mM7gmTv.png",
-        "https://i.imgur.com/tDrqe7M.png",
-        "https://i.imgur.com/AOruG64.png",
-        "https://i.imgur.com/CqI8sZK.png",
-        "https://i.imgur.com/uAjHgDU.png",
-        "https://i.imgur.com/OEcPLeg.png",
-        "https://i.imgur.com/IxDtWRi.png",
-        "https://i.imgur.com/UWHWjMp.png",
-        "https://i.imgur.com/NdAkMUN.png",
-        "https://i.imgur.com/VECggDa.png",
-        "https://i.imgur.com/APmAPvn.png",
-        "https://i.imgur.com/zBBqeQz.png",
-        "https://i.imgur.com/zBBqeQz.png",
-        "https://i.imgur.com/5O0YbtS.png"
+        "https://raw.githubusercontent.com/kittenzflight/censor-popup/main/images/20251109_045310.png",
+        "https://raw.githubusercontent.com/kittenzflight/censor-popup/main/images/20251121_084819.png",
+        "https://raw.githubusercontent.com/kittenzflight/censor-popup/main/images/2Pibzzf.png",
+        "https://raw.githubusercontent.com/kittenzflight/censor-popup/main/images/2Pp2snw.png",
+        "https://raw.githubusercontent.com/kittenzflight/censor-popup/main/images/5O0YbtS.png",
+        "https://raw.githubusercontent.com/kittenzflight/censor-popup/main/images/AOnuG64.png",
+        "https://raw.githubusercontent.com/kittenzflight/censor-popup/main/images/APmAPvn.png",
+        "https://raw.githubusercontent.com/kittenzflight/censor-popup/main/images/Av8u8Kt.png",
+        "https://raw.githubusercontent.com/kittenzflight/censor-popup/main/images/CqI8sZK.png",
+        "https://raw.githubusercontent.com/kittenzflight/censor-popup/main/images/DM6eJRE.png",
+        "https://raw.githubusercontent.com/kittenzflight/censor-popup/main/images/GV6RC4u.png",
+        "https://raw.githubusercontent.com/kittenzflight/censor-popup/main/images/HFRe6g1.png",
+        "https://raw.githubusercontent.com/kittenzflight/censor-popup/main/images/IMG_1839.png",
+        "https://raw.githubusercontent.com/kittenzflight/censor-popup/main/images/IMG_20251118_154926_947.png",
+        "https://raw.githubusercontent.com/kittenzflight/censor-popup/main/images/iTuYfuS.png",
+        "https://raw.githubusercontent.com/kittenzflight/censor-popup/main/images/IxDtWRi.png",
+        "https://raw.githubusercontent.com/kittenzflight/censor-popup/main/images/j8vECbl.png",
+        "https://raw.githubusercontent.com/kittenzflight/censor-popup/main/images/KnBmtk3.png",
+        "https://raw.githubusercontent.com/kittenzflight/censor-popup/main/images/kYIPspi.png",
+        "https://raw.githubusercontent.com/kittenzflight/censor-popup/main/images/meaSaa1baAaaiamhDMhqXLHPrND-61HG6.png",
+        "https://raw.githubusercontent.com/kittenzflight/censor-popup/main/images/mM7gmTv.png",
+        "https://raw.githubusercontent.com/kittenzflight/censor-popup/main/images/NdAkMUN.png",
+        "https://raw.githubusercontent.com/kittenzflight/censor-popup/main/images/OEcPLeg.png",
+        "https://raw.githubusercontent.com/kittenzflight/censor-popup/main/images/RDT_20251103_220513191400341628245160B.png",
+        "https://raw.githubusercontent.com/kittenzflight/censor-popup/main/images/tDrqe7M.png",
+        "https://raw.githubusercontent.com/kittenzflight/censor-popup/main/images/tzurPkH.png",
+        "https://raw.githubusercontent.com/kittenzflight/censor-popup/main/images/uAjHgDU.png",
+        "https://raw.githubusercontent.com/kittenzflight/censor-popup/main/images/UWHWjMp.png",
+        "https://raw.githubusercontent.com/kittenzflight/censor-popup/main/images/VECggDa.png",
+        "https://raw.githubusercontent.com/kittenzflight/censor-popup/main/images/zBBqeQz.png"
     ];
     
     // Log to verify script is running
@@ -67,7 +72,14 @@
         
         function spawnImage() {
             const img = document.createElement("img");
-            img.src = imageList[Math.floor(Math.random() * imageList.length)];
+            const imgUrl = imageList[Math.floor(Math.random() * imageList.length)];
+            img.src = imgUrl;
+            
+            // Hide image if it fails to load
+            img.onerror = function() {
+                img.remove();
+            };
+            
             const size = Math.floor(60 + Math.random() * 200);
             img.style.width = size + "px";
             img.style.position = "absolute";
