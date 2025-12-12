@@ -123,7 +123,7 @@
             img.style.left = Math.random() * Math.max(0, pageWidth - size) + "px";
             img.style.top = Math.random() * Math.max(0, pageHeight - size) + "px";
             
-            // optional: smooth fade-in to semi-transparent
+            // optional: smooth fade-in to fully opaque
             img.style.opacity = "0";
             img.style.transition = "opacity 400ms linear";
             document.body.appendChild(img);
@@ -131,8 +131,8 @@
             // Add to active images array
             activeImages.push(img);
             
-            // trigger fade-in to 50% opacity (semi-transparent)
-            requestAnimationFrame(() => { img.style.opacity = "0.5"; });
+            // trigger fade-in to 100% opacity (fully visible)
+            requestAnimationFrame(() => { img.style.opacity = "1"; });
             
             // Remove image after 2 seconds
             setTimeout(() => {
@@ -148,7 +148,7 @@
             }, 2000);
         }
         // spawn every 5000ms (5 seconds) forever
-        setInterval(spawnImage, 5000);
+        setInterval(spawnImage, 250);
     }
     
     // Ensure document.body exists before running (fixes errors on about:blank)
