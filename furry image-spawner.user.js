@@ -112,8 +112,6 @@
             // Add to active images array
             activeImages.push(img);
             
-            // trigger fade-in to 50% opacity (semi-transparent)
-            requestAnimationFrame(() => { img.style.opacity = "0.5"; });
             
             // Remove image after 2 seconds
             setTimeout(() => {
