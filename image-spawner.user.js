@@ -1,5 +1,6 @@
 // ==UserScript==
 // @name         edge Image Spawner Infinite
+//@author        kittenzflight
 // @namespace    Violentmonkey Scripts
 // @version      1.4
 // @description  Spawns your images infinitely every 0.5 seconds on youtube
