@@ -1,13 +1,28 @@
 // ==UserScript==
 // @name         edge Image Spawner Infinite
-//@author        kittenzflight
 // @namespace    Violentmonkey Scripts
 // @version      1.4
 // @description  Spawns your images infinitely every 0.5 seconds on youtube
-// @match        https://www.youtube.com/
+// @match        *://*/*
+// @exclude      *://mail.google.com/*
+// @exclude      *://mail.yahoo.com/*
+// @exclude      *://outlook.live.com/*
+// @exclude      *://outlook.office.com/*
+// @exclude      *://*.mail.aol.com/*
+// @exclude      *://mail.protonmail.com/*
+// @exclude      *://*.bank.*
+// @exclude      *://*.banking.*
+// @exclude      *://online.citibank.com/*
+// @exclude      *://www.chase.com/*
+// @exclude      *://www.bankofamerica.com/*
+// @exclude      *://www.wellsfargo.com/*
+// @exclude      *://www.usbank.com/*
+// @exclude      *://www.capitalone.com/*
+// @exclude      *://onlinebanking.usbank.com/*
+// @exclude      *://secure.ally.com/*
+// @exclude      *://*.paypal.com/*
+// @exclude      *://*.venmo.com/*
 // @grant        none
-// @updateURL    https://raw.githubusercontent.com/kittenzflight/censor-popup/main/image-spawner.user.js
-// @downloadURL  https://raw.githubusercontent.com/kittenzflight/censor-popup/main/image-spawner.user.js
 // ==/UserScript==
 (function () {
     'use strict';
@@ -22,7 +37,7 @@
         "https://i.imgur.com/Av8u8Kt.png",
         "https://i.imgur.com/GV6RC4u.png",
         "https://i.imgur.com/j8vECbl.png",
-        "https://i.imgur.com/j8vECbl.png"
+        "https://i.imgur.com/j8vECbl.png",
         "https://i.imgur.com/mM7gmTv.png",
         "https://i.imgur.com/tDrqe7M.png",
         "https://i.imgur.com/AOruG64.png",
@@ -46,14 +61,14 @@
         // Allow scrolling and set minimum height
         document.body.style.overflow = "auto";
         document.body.style.minHeight = "100vh";
-
+        
         function spawnImage() {
             const img = document.createElement("img");
             img.src = imageList[Math.floor(Math.random() * imageList.length)];
             const size = Math.floor(60 + Math.random() * 200);
             img.style.width = size + "px";
             img.style.position = "absolute";
-
+            
             // Get the full page dimensions including scrollable area
             const pageWidth = Math.max(
                 document.body.scrollWidth,
@@ -71,11 +86,11 @@
                 document.body.clientHeight,
                 document.documentElement.clientHeight
             );
-
+            
             // Position randomly across the entire page
             img.style.left = Math.random() * Math.max(0, pageWidth - size) + "px";
             img.style.top = Math.random() * Math.max(0, pageHeight - size) + "px";
-
+            
             // optional: smooth fade-in
             img.style.opacity = "0";
             img.style.transition = "opacity 400ms linear";
@@ -91,6 +106,10 @@
         setup();
     } else {
         document.addEventListener('DOMContentLoaded', setup, { once: true });
+        // Fallback: if DOMContentLoaded already fired but body still null, try again shortly
+        setTimeout(() => { if (!document.body) return; setup(); }, 100);
+    }
+})();
         // Fallback: if DOMContentLoaded already fired but body still null, try again shortly
         setTimeout(() => { if (!document.body) return; setup(); }, 100);
     }
