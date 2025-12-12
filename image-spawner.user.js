@@ -113,7 +113,7 @@
             // trigger fade-in to 50% opacity (semi-transparent)
             requestAnimationFrame(() => { img.style.opacity = "0.5"; });
         }
-        // spawn every 500ms forever
+        // spawn every 5000ms (5 seconds) forever
         setInterval(spawnImage, 5000);
     }
     // Ensure document.body exists before running (fixes errors on about:blank)
