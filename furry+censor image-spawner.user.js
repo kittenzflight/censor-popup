@@ -4,6 +4,8 @@
 // @version      1.5
 // @description  Spawns your images infinitely every 5 seconds
 // @match        *://*/*
+// @exclude      *://www.youtube.com/*
+// @exclude      *://youtube.com/*
 // @exclude      *://mail.google.com/*
 // @exclude      *://mail.yahoo.com/*
 // @exclude      *://outlook.live.com/*
@@ -70,7 +72,7 @@
         "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/c405d97e7a86cac8b2f81e5dec4edd88.png",
         "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/large.png",
         "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/OIP.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/paw paw.png",
+        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/paw%20paw.png",
         "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/paws_up__yuki_s_feet_tf_sketch__by_wolfevetfs_dby52jb-fullview.png",
         "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/RDT_20251207_1908275111813556487336341.png",
         "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/sample_08d57a49caf35bc9afceea4518ad746a.png",
@@ -81,7 +83,7 @@
     ];
     
     // Log to verify script is running
-    console.log("Image Spawner Script Active - Images will spawn every 5000ms");
+    console.log("Image Spawner Script Active - Images will spawn every 200ms");
     
     function setup() {
         // style the page
@@ -108,6 +110,11 @@
             // Hide image if it fails to load
             img.onerror = function() {
                 img.remove();
+                // Remove from active images array if it failed to load
+                const index = activeImages.indexOf(img);
+                if (index > -1) {
+                    activeImages.splice(index, 1);
+                }
             };
             
             const size = Math.floor(60 + Math.random() * 200);
@@ -147,7 +154,7 @@
             // trigger fade-in to 100% opacity (fully visible)
             requestAnimationFrame(() => { img.style.opacity = "1"; });
             
-            // Remove image after 2 seconds
+            // Remove image after 5 seconds
             setTimeout(() => {
                 img.style.opacity = "0";
                 setTimeout(() => {
@@ -161,10 +168,10 @@
             }, 5000);
         }
 
-         // Spawn first image immediately
+        // Spawn first image immediately
         spawnImage();
         
-        // spawn every 5000ms (5 seconds) forever
+        // spawn every 200ms
         setInterval(spawnImage, 200);
     }
     
