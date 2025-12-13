@@ -4,6 +4,8 @@
 // @version      1.5
 // @description  Spawns your images infinitely every 5 seconds
 // @match        *://*/*
+// @exclude      *://www.youtube.com/*
+// @exclude      *://youtube.com/*
 // @exclude      *://mail.google.com/*
 // @exclude      *://mail.yahoo.com/*
 // @exclude      *://outlook.live.com/*
@@ -177,11 +179,6 @@
     if (document.body) {
         setup();
     } else {
-        document.addEventListener('DOMContentLoaded', setup, { once: true });
-        // Fallback: if DOMContentLoaded already fired but body still null, try again shortly
-        setTimeout(() => { if (document.body) setup(); }, 100);
-    }
-})();
         document.addEventListener('DOMContentLoaded', setup, { once: true });
         // Fallback: if DOMContentLoaded already fired but body still null, try again shortly
         setTimeout(() => { if (document.body) setup(); }, 100);
