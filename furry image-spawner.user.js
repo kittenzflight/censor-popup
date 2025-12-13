@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         edge Image Spawner Infinite
+// @name         furry Image Spawner Infinite
 // @namespace    Violentmonkey Scripts
 // @version      1.6
 // @description  Spawns your images infinitely every 0.25 seconds
