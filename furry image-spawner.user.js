@@ -1,11 +1,9 @@
 // ==UserScript==
-// @name         edge Image Spawner Infinite
+// @name         Furry Image Spawner Infinite
 // @namespace    Violentmonkey Scripts
 // @version      1.8
 // @description  Spawns your images infinitely every 5 seconds
 // @match        *://*/*
-// @exclude      *://www.youtube.com/*
-// @exclude      *://youtube.com/*
 // @exclude      *://mail.google.com/*
 // @exclude      *://mail.yahoo.com/*
 // @exclude      *://outlook.live.com/*
@@ -29,44 +27,6 @@
 (function () {
     'use strict';
     const imageList = [
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/images/20251026_203417.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/images/20251121_084819.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/images/2Pibzzf.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/images/2Pp2snw.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/images/5O0YbtS.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/images/AOnuG64.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/images/APmAPvn.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/images/Av8u8Kt.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/images/CqI8sZK.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/images/DM6eJRE.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/images/GV6RC4u.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/images/HFRe6g1.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/images/IMG_1839.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/images/fITuYfuS.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/images/IxDtWRi.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/images/j8vECbl.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/images/KnBmtk3.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/images/kYIPspi.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/images/mM7gmTv.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/images/NdAkMUN.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/images/OEcPLeg.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/images/pawcensor7.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/images/pawcensor8.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/images/RDT_20251009_1341085938169982248552407.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/images/RDT_20251015_1053111557748578946912637.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/images/RDT_20251015_1053137526698811540066672.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/images/RDT_20251015_1053168264305018465134280.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/images/RDT_20251103_0416506748246703000898010.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/images/RDT_20251103_1405257255778176778764800.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/images/RDT_20251103_1405522216817939736524364.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/images/RDT_20251104_1609052612580080103016341.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/images/RDT_20251109_0634198622118131010542570.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/images/RDT_20251109_0635299355693879616020049.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/images/RDT_20251109_0635318971608469596356400.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/images/RDT_20251109_0644001287714239312844615.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/images/RDT_20251109_0645262179347786922080725.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/images/RDT_20251207_1908275111813556487336341.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/images/RemDCR.png",
         "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/2a24ada4c4d7b7c0cc01517c76ba1028.jpg",
         "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/8a563a67b8ae4d626fdcef7cf9a94d24.jpg",
         "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/c405d97e7a86cac8b2f81e5dec4edd88.png",
