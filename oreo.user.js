@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         edge Image Spawner Infinite
+// @name       Oreo Image Spawner Infinite
 // @namespace    Violentmonkey Scripts
 // @version      1.6
 // @description  Spawns your images infinitely every 0.25 seconds
@@ -27,19 +27,39 @@
 (function () {
     'use strict';
     const imageList = [
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/2a24ada4c4d7b7c0cc01517c76ba1028.jpg",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/8a563a67b8ae4d626fdcef7cf9a94d24.jpg",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/c405d97e7a86cac8b2f81e5dec4edd88.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/large.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/OIP.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/paw%20paw.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/paws_up__yuki_s_feet_tf_sketch__by_wolfevetfs_dby52jb-fullview.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/RDT_20251207_1908275111813556487336341.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/sample_08d57a49caf35bc9afceea4518ad746a.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/sample_1f1ec28fd28de7f7ba8accd326477601f5eb1dd2.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/sample_4606b280cf94303566fe9f5908bef14d.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/sample_a22795e934134e398ef9c067e73fb3cfbcc1e623.png",
-        "https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/paws/vr.png"
+"https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/oreo/$RICA11U.png",
+"https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/oreo/$RJPN27S.png",
+"https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/oreo/$RLSZZL7.png",
+"https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/oreo/Een_titel_toevoegen_28.png",
+"https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/oreo/Oreo's_Censor.png",
+"https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/oreo/Oreo_137.png",
+"https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/oreo/imagas.png",
+"https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/oreo/image.png",
+"https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/oreo/imagec.png",
+"https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/oreo/images.png",
+"https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/oreo/imagez.png",
+"https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/oreo/ore0.png",
+"https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/oreo/spec1.png",
+"https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/oreo%202/Oreo_108.jpeg",
+"https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/oreo%202/ass%20(2).jpeg",
+"https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/oreo%202/latex%20oreo%20(11).jpeg",
+"https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/oreo%202/latex%20oreo%20(17).jpeg",
+"https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/oreo%202/latex%20oreo%20(19).jpeg",
+"https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/oreo%202/latex%20oreo%20(7).jpeg",
+"https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/oreo%203/ass%20(1).jpeg",
+"https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/oreo%203/ass3.jpeg",
+"https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/oreo%203/goop.jpeg",
+"https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/oreo%203/goop2.jpeg",
+"https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/New%20folder/close%20up%20(1).jpeg",
+"https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/New%20folder/close%20up%20(2).png",
+"https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/New%20folder/close%20up%20(3).jpeg",
+"https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/New%20folder/close%20up%20(4).jpeg",
+"https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/New%20folder/close%20up%20(5).jpeg",
+"https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/New%20folder/close%20up%20(6).jpeg",
+"https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/New%20folder/close%20up%20(7).jpeg",
+"https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/New%20folder/close%20up%20(8).jpeg",
+"https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/New%20folder/laying%20(1).png",
+"https://cdn.jsdelivr.net/gh/kittenzflight/censor-popup@main/New%20folder/laying%20(2).png",
     ];
     
     // Log to verify script is running
