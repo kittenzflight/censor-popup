@@ -2,8 +2,10 @@
 // @name         edge Image Spawner Infinite
 // @namespace    Violentmonkey Scripts
 // @version      1.8
-// @description  Spawns your images infinitely every .25 seconds
+// @description  Spawns your images infinitely every 5 seconds
 // @match        *://*/*
+// @exclude      *://www.youtube.com/*
+// @exclude      *://youtube.com/*
 // @exclude      *://mail.google.com/*
 // @exclude      *://mail.yahoo.com/*
 // @exclude      *://outlook.live.com/*
@@ -149,8 +151,8 @@
             // Add to active images array
             activeImages.push(img);
             
-            // trigger fade-in to 50% opacity (semi-transparent)
-            requestAnimationFrame(() => { img.style.opacity = "0.5"; });
+            // trigger fade-in to 100% opacity (fully visible)
+            requestAnimationFrame(() => { img.style.opacity = "1"; });
             
             // Remove image after 5 seconds
             setTimeout(() => {
