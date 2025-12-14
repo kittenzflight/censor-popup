@@ -4,8 +4,6 @@
 // @version      2.0
 // @description  Spawns your images infinitely every 0.25 seconds
 // @match        *://*/*
-// @exclude      *://www.youtube.com/*
-// @exclude      *://youtube.com/*
 // @exclude      *://mail.google.com/*
 // @exclude      *://mail.yahoo.com/*
 // @exclude      *://outlook.live.com/*
